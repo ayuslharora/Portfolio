@@ -1,0 +1,317 @@
+@keyframes  text1 {
+    from{
+        width: 0;
+        border-color: white;
+    }
+    99%{
+        border-color: white;
+    }
+    to{
+        border-color: transparent;
+        width: 8ch;
+    }
+}
+
+@keyframes opacity1 {
+    from{
+        opacity: 1;
+    }
+
+    99%{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+    
+}
+
+@keyframes  text2 {
+    from{
+        width: 0;
+        border-color: white;
+    }
+        99%{
+            border-color: white;
+            opacity: 1;
+        }
+
+    to{
+        opacity: 0;
+        border-color: transparent;
+        width: 3ch;
+        .p1{
+            color: transparent;
+            opacity: 0;
+        }
+    }
+}
+
+@keyframes opacity2 {
+    from{
+        opacity: 1;
+    }
+
+    99%{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+    
+}
+
+@keyframes  text3 {
+    from{
+        width: 0;
+        border-color: white;
+    }
+        99%{
+            border-color: white;
+            width: 31ch;
+
+        }
+
+    to{
+        border-color: transparent;
+        width: 31ch;
+    }
+}
+
+@keyframes opacity3 {
+    from{
+        opacity: 1;
+    }
+
+    99%{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+    
+}
+
+@keyframes  text4 {
+    from{
+        width: 0;
+        border-color: white;
+    }
+        99%{
+            border-color: white;
+            width: 21ch;
+
+        }
+
+    to{
+        border-color: transparent;
+        width: 21ch;
+    }
+}
+
+@keyframes  text5 {
+    from{
+        width: 0;
+        border-color: white;
+    }
+        99%{
+            border-color: white;
+            width: 23ch;
+
+        }
+
+    to{
+        border-color: transparent;
+        width: 23ch;
+    }
+}
+
+@keyframes btn1 {
+    from{
+        opacity: 1;
+        scale: 1;
+    }
+    50%{
+        opacity: 1;
+        scale: 1.2;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+@keyframes baselod {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes load {
+    0%{
+        width: 0px;
+    }
+    10%{
+        width: 100px;
+    }
+    20%{
+        width: 220px;
+    }
+    30%{
+        width: 300px;
+    }
+    40%{
+        width: 350px;
+    }
+    50%{
+        width: 400px;
+    }
+    100%{
+        width: 10000px;
+    }
+}
+
+html,body {
+    background-color: black;
+    font-family: Victor Mono;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+
+.upper,.lower {
+    height:500px;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: auto;
+    width: auto;
+    box-sizing: border-box;
+}
+
+
+
+
+.half {
+
+    right: 0px;
+    left: 0px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.5;
+    align-items: center;
+    width: 100vw;
+    margin-top: 25px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    /* margin-top: ; */
+}
+
+.p1,.p2,.p3,.p4,.p5{
+    white-space: nowrap;
+    border-right: 0.7ch solid transparent;
+    width: 0;
+    overflow: hidden;
+    color: white;
+    position: fixed;
+}
+
+.p1{
+    font-size:5vw;
+    opacity: 0;
+    /* margin-top:-550px; */
+    top: 25vh;
+    animation: text1 1.5s steps(8,end) forwards,
+    opacity1 3s forwards;
+    z-index: 2;
+
+}
+
+.p2{
+    font-size: 5vw;
+    top: 40vh;
+    animation: text2 1s steps(3,end) 2s forwards,
+    opacity2 2s 1s forwards;
+    z-index: 2;
+}
+
+.p3{
+    font-size: 4vw;
+    overflow: hidden;
+    top: 35vh;
+    animation: text3 4s steps(31,end) 3s forwards,
+    opacity3 4s 4s forwards;
+    z-index: 3;
+}
+
+.p4{
+    font-size: 5vw;
+    overflow: hidden;
+    top: 10vh;
+    animation: text4 3s steps(21,end) 8.5s forwards;
+}
+
+.p5{
+    font-size: 5vw;
+    overflow: hidden;
+    top: 23vh;
+    animation: text5 3s steps(23,end) 11.5s forwards;
+}
+
+.btc{
+    position:fixed;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    top: 70vh;
+    cursor: pointer;
+    /* margin: clamp(3vw,auto); */
+    animation: btn1 1s linear 14.5s forwards;
+
+
+}
+
+.btn1{
+    opacity: 0;
+    font-size: 25px;
+    margin: auto;
+    background-color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    animation: btn1 0.5s linear 14.5s forwards;
+    box-shadow: 0 0 12px rgba(255,255,255, 1);
+}
+
+.loading{
+    height: 3px;
+    background-color: gray;
+    width: 400px;
+    position: fixed;
+    top: 55vh;
+    animation: baselod 1s linear 15.5s forwards;
+    opacity: 0;
+}
+
+.white{
+    opacity: 0;
+    background-color: white;
+    width: 0px;
+    animation: load 4s ease-in-out 15.5s forwards,
+    baselod 1s linear 16.5s forwards;
+}
+
+
+@media(max-width: 1100px){
+    .half{
+        opacity: 0;
+    }
+}

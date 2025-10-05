@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="icon" type="image/png" href="test/Lucid_Origin_Create_a_clean_modern_and_minimalistic_personal_l_1_2-removebg-preview.png">
+
+</head>
+
+<body>
+
+    <!-- ======= overlay toggle + overlay (OUTSIDE header) ======= -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" />
+    <aside class="menu-overlay" aria-hidden="true">
+        <div class="menu-top">
+            <a href="#HOME" class="overlay-logo" aria-label="Home">
+                <img src="Lucid_Origin_Create_a_clean_modern_and_minimalistic_personal_l_1_2-removebg-preview.png"
+                    alt="" />
+            </a>
+            <label for="nav-toggle" class="menu-close" aria-label="Close menu">×</label>
+        </div>
+
+        <div class="menu-center">
+            <!-- Clicking any item also closes the menu (label wraps link) -->
+            <label for="nav-toggle" class="menu-item"><a href="test/Home.html#HOME" class="menu-link active"
+                    data-num="01">home</a></label>
+            <label for="nav-toggle" class="menu-item"><a href="test/Home.html#About" class="menu-link" data-num="02">about</a></label>
+            <label for="nav-toggle" class="menu-item"><a href="test/Home.html#Projects" class="menu-link"
+                    data-num="03">works</a></label>
+            <label for="nav-toggle" class="menu-item"><a href="test/Home.html#contact" class="menu-link"
+                    data-num="04">contact</a></label>
+        </div>
+
+        <div class="menu-bottom">
+            <a href="https://www.linkedin.com/in/ayush-arora-678758376/" aria-label="LinkedIn"><img
+                    src="linkedin-svgrepo-com.svg" alt=""></a>
+            <a href="https://github.com/ayuslharora" aria-label="GitHub"><img src="github-142-svgrepo-com.svg"
+                    alt=""></a>
+        </div>
+    </aside>
+
+    <!-- ======= HEADER ======= -->
+    <header class="nav">
+        <div class="nav-left">
+            <a href="#HOME" class="logo-link" aria-label="Home">
+                <img src="test/Lucid_Origin_Create_a_clean_modern_and_minimalistic_personal_l_1_2-removebg-preview.png"
+                    class="logo" alt="Logo" />
+            </a>
+        </div>
+
+        <!-- burger label (toggling the checkbox above) -->
+        <label for="nav-toggle" class="nav-burger" aria-hidden="true">
+            <span></span><span></span><span></span>
+        </label>
+
+        <!-- desktop nav -->
+        <nav class="nav-right" aria-label="Main">
+            <div class="navItem"><span><a href="test/Home.html#HOME">Home</a></span></div>
+            <div class="navItem"><span><a href="test/Home.html#About">About</a></span></div>
+            <div class="navItem"><span><a href="test/Home.html#Academics">Academics</a></span></div>
+            <div class="navItem"><span><a href="test/Home.html#skills">My Skills</a></span></div>
+            <div class="navItem"><span><a href="test/Home.html#Projects">Projects</a></span></div>
+            <div class="navItem"><span><a href="test/Home.html#contact">Contact</a></span></div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Get in touch.</h1>
+        <p>
+            Do you fancy saying hi to me or you want to get started with your project
+            and you need my help? Feel free to contact me.
+        </p>
+
+        <form>
+            <!-- Name -->
+            <input type="text" name="name" placeholder="John Doe" required>
+
+            <!-- Email -->
+            <input type="email" name="email" placeholder="johndoe@gmail.com" required>
+            <span class="error-message">Email format is invalid.</span>
+
+            <!-- Subject -->
+            <input type="text" name="subject" placeholder="Subject" required>
+
+            <!-- Message -->
+            <textarea name="message" placeholder="Message" maxlength="1000" required></textarea>
+
+            <!-- Button -->
+            <button type="submit">SEND MESSAGE →</button>
+        </form>
+        
+    </div>
+    <footer class="bottombar">
+        @ayuslh.arora | <a href="https://www.linkedin.com/in/ayush-arora-678758376/" class="bottomlink"><img
+                src="test/linkedin-svgrepo-com.svg" class="bottomlink"></a>
+        <a href="https://github.com/ayuslharora" class="bottomlink"><img src="test/github-142-svgrepo-com.svg"
+                class="bottomlink"></a>
+    </footer>
+</body>
+
+</html>

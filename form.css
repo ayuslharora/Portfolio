@@ -1,0 +1,381 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #333;
+}
+
+.nav {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap);
+    height: 64px;
+    padding: 0 2vw;
+    background: rgba(255, 255, 255, .7);
+    backdrop-filter: blur(8px);
+    filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, .8));
+    z-index: 100;
+}
+
+.logo {
+    height: 30px;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+.navItem {
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navItem span {
+    color: #000;
+    font-size: 16px;
+    position: relative;
+    z-index: 6;
+}
+
+/* ---------- HAMBURGER (no JS) ---------- */
+.nav-toggle {
+    position: absolute;
+    left: -9999px;
+}
+
+.nav-burger {
+    display: none;
+    width: 38px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    z-index: 130;
+}
+
+.nav-burger span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+    transform-origin: left center;
+    transition: transform .25s ease, opacity .2s ease, width .25s ease;
+}
+
+.nav-burger span:nth-child(1) {
+    top: 2px;
+}
+
+.nav-burger span:nth-child(2) {
+    top: 12px;
+}
+
+.nav-burger span:nth-child(3) {
+    top: 22px;
+}
+
+/* Burger -> X when checked (checkbox is BEFORE header) */
+#nav-toggle:checked~header .nav-burger span:nth-child(1) {
+    transform: rotate(38deg);
+    width: 110%;
+}
+
+#nav-toggle:checked~header .nav-burger span:nth-child(2) {
+    opacity: 0;
+}
+
+#nav-toggle:checked~header .nav-burger span:nth-child(3) {
+    transform: rotate(-38deg);
+    width: 110%;
+}
+
+/* ---------- FULLSCREEN OVERLAY MENU ---------- */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .92);
+    color: #fff;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity .25s ease, transform .25s ease;
+    z-index: 120;
+}
+
+#nav-toggle:checked+.menu-overlay {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.menu-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+}
+
+.menu-top .overlay-logo img {
+    height: 28px;
+    filter: invert(1);
+}
+
+.menu-close {
+    font-size: 34px;
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    padding: 6px 10px;
+}
+
+.menu-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(18px, 4vh, 40px);
+    text-transform: lowercase;
+    position: relative;
+}
+
+.menu-item {
+    cursor: pointer;
+}
+
+.menu-link {
+    position: relative;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, .45);
+    font-size: clamp(28px, 7vw, 64px);
+    transition: color .2s ease, transform .2s ease;
+}
+
+.menu-link:hover {
+    color: rgba(255, 255, 255, .85);
+    transform: translateY(-2px);
+}
+
+.menu-link.active {
+    color: #fff;
+}
+
+.menu-link.active::before {
+    content: attr(data-num);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -58%);
+    font-size: clamp(90px, 28vw, 240px);
+    color: rgba(255, 255, 255, .08);
+    font-weight: 900;
+    pointer-events: none;
+}
+
+.menu-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding: 18px 0 28px;
+}
+
+.menu-bottom img {
+    height: 20px;
+    filter: invert(1);
+    opacity: .9;
+}
+
+
+a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 550;
+    font-size: 1rem;
+
+}
+
+.container {
+    /* padding: 20vh; */
+    padding-top: 10vh;
+    width: 60vw;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin: 0 auto;
+    height: 120vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background: transparent;
+    transition: border-color 0.3s;
+}
+
+input:valid {
+    background: #eaffea;
+    /* greenish */
+}
+
+input:invalid {
+    border-color: #e74c3c;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.error-message {
+    font-size: 0.9rem;
+    color: #e74c3c;
+    display: none;
+}
+
+input:invalid+.error-message {
+    display: block;
+}
+
+button {
+    margin-top: 3vh;
+    align-self: flex-start;
+    background: black;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: #444;
+}
+
+.bottombar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 1vh;
+    gap: 18px;
+    font-size: 1.2rem;
+    padding-bottom: 2vh;
+}
+
+.bottomlink {
+    height: 3vh;
+    margin: 0px;
+}
+
+
+@media (max-width:768px) {
+
+    /* NAV FIX: mobile should hide desktop links and show burger */
+    .nav-right {
+        display: none;
+    }
+
+    .nav-burger {
+        display: block;
+    }
+
+    .comtainer {
+        width: 90vw;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        margin: 0px;
+    }
+    form input,textarea{
+        width: 85%;
+    }
+}
+
+@media (max-width:560px) {
+    .nav {
+        height: 56px;
+        padding: 0 4vw;
+    }
+
+    .logo {
+        height: 26px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .comtainer {
+        width: 90vw;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        margin: 0px;
+    }
+    form input,textarea{
+        width: 85%;
+    }
+
+}
+
+@media (max-width:380px) {
+    .nav-burger {
+        width: 32px;
+        height: 24px;
+    }
+
+    .comtainer {
+        width: 90vw;
+        padding-right: 5vw;
+        padding-left: 5vw;
+        margin: 0px;
+    }
+
+    form input,textarea{
+        width: 85%;
+    }
+}
